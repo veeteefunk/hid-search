@@ -1,109 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
-
 * {
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Mulish', sans-serif;
-    background-color: #f0f0f0;
+  background-color: #eef5ff;
 }
 
-h1 {
-    margin: 50px 0 30px;
-    text-align: center;
+.wrapper {
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
-.faq-container {
-    max-width: 600px;
-    margin: 0 auto;
+.container {
+  height: 200px;
+  width: 200px;
+  background-color: #ffffff;
+  box-shadow: 0 0 25px rgba(17, 1, 68, 0.08);
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
 }
 
-.faq {
-    background-color: transparent;
-    border: 1px solid #9fa4a8;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 30px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s ease;
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  /* border: 1px solid black; */
+  position: relative;
+  width: 100%;
+  cursor: pointer;
 }
 
-.faq.active {
-    background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,.1), 
-    0 3px 6px rgba(0,0,0,0.1);
+input[type="checkbox"]::after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f111";
+  font-size: 18px;
+  color: #478bfb;
+  right: 10px;
+  top: -5px;
 }
 
-.faq.active::before, 
-.faq.active::after {
-    content: '\f075';
-    font-family: 'Font Awesome 5 Free';
-    color: #2ecc71;
-    font-size: 7rem;
-    position: absolute;
-    opacity: 0.2;
-    top: 20px;
-    left: 20px;
-    z-index: 0;
+input[type="checkbox"]:checked::after {
+  font-weight: 900;
+  content: "\f058";
+  color: #478bfb;
 }
 
-.faq.active::before {
-    color: #3498db;
-    top: -10px;
-    left: -30px;
-    transform: rotateY(180deg);
+.container img {
+  width: 70%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
 }
-
-.faq-title {
-    margin: 0 35px 0 0;
-}
-
-.faq-text {
-    margin: 30px 0 0;
-    display: none;
-}
-
-.faq.active .faq-text {
-    display: block;
-}
-
-.faq-toggle {
-    background-color: transparent;
-    border: 0;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    padding: 0;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    height: 30px;
-    width: 30px;
-}
-
-.faq-toggle:focus {
-    outline: 0;
-}
-
-.faq-toggle .fa-times {
-    display: none;
-}
-
-.faq.active .faq-toggle .fa-times {
-    display: block;
-    color: #fff;
-}
-.faq.active .faq-toggle .fa-chevron-down {
-    display: none;
-}
-
-.faq.active .faq-toggle {
-    background-color: #9fa4a8;
-}
-
-
